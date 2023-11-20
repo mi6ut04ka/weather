@@ -12,7 +12,7 @@ export const getWeather = createAsyncThunk(
     'weather/getWeather',
     (sityName)=>{
         const {request} = useHttp();
-        return request(`https://api.openweathermap.org/data/2.5/forecast?q=${sityName}&appid=4095eb796212156ff1a218a9b0f8a2fd`);
+        return request(`https://api.openweathermap.org/data/2.5/forecast?q=${sityName}&appid=4095eb796212156ff1a218a9b0f8a2fd&units=metric`);
     }
 )
 
@@ -32,6 +32,6 @@ const weatherSlice = createSlice({
     }
 })
 
-const {actions, reducer} = weatherSlice;
+const {reducer} = weatherSlice;
 
 export default reducer;
